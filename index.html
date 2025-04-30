@@ -10,19 +10,6 @@
         <input id="uploadInput" type="file" multiple>
         <input type="button" onclick="upload();" value="Send file(s)">
     </form>
-
-    <script>
-        function upload() {
-            const fileInput = document.getElementById("uploadInput");
-            const su = new SmashUploader({ region: "eu-west-3", token: "Put your api key here" })
-
-            su.upload({ files: [...fileInput.files] })
-                .then(transfer => { console.log("Transfer", transfer); })
-                .catch(error => { console.log("Error", error); });
-
-            su.on('progress', (event) => { console.log(event.data.progress.percent); });
-        }
-    </script>
 </body>
 
 <script src="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM2YTUyMDFiLTUxMjItNDgwZC05YzRhLTQ0YWEzODdiNDg4MC1ldSIsInVzZXJuYW1lIjoiNzZhNWViOTctZWNiNy00MmNiLTk5MjUtMjFmNDViYzJmMzJlIiwicmVnaW9uIjoidXMtZWFzdC0xIiwiaXAiOiIyMDEuMjAuMTEwLjI0MiIsInNjb3BlIjoiTm9uZSIsImFjY291bnQiOiJhMTFkZTllYy1kMjM3LTQ2ODEtOTY0NS03OTViMDA4ZjM0ZDUtZWEiLCJpYXQiOjE3NDYwNDkxMjEsImV4cCI6NDkwMTgwOTEyMX0.4Pn0ucwaezK4aEY3oWK2M9y-_Sb68WydEg6SrlMBYGA"></script>
